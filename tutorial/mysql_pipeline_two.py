@@ -34,7 +34,6 @@ class MysqlPipelineTwo(object):
         query.addCallback(self.handle_error)  # 处理异常
 
     def do_insert(self, cursor, item):
-        print("即将入库是信息",item)
         # 对数据库进行插入操作，并不需要commit，twisted会自动commit
         insert_sql = """
         insert into wordpress.wp_posts ( post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES ( 1, '2019-09-18 16:06:53', '2019-09-18 08:06:53', %s, %s, '', 'publish', 'open', 'open', '', '', '', '', '2019-09-18 16:06:53', '2019-09-18 08:06:53', '', 0, '', 0, 'post', '', 0);
