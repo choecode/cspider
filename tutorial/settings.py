@@ -9,6 +9,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+#mysql
+MYSQL_HOST = '34.92.220.121'
+MYSQL_DBNAME = 'wordpress'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '86qweqweqwe'
+
+
+BOT_NAME = 'tutorial'
+
+
 BOT_NAME = 'tutorial'
 
 SPIDER_MODULES = ['tutorial.spiders']
@@ -27,7 +37,7 @@ CONCURRENT_REQUESTS = 100
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 0
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 100
 CONCURRENT_REQUESTS_PER_IP = 100
@@ -65,7 +75,8 @@ COOKIES_ENABLED = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'tutorial.pipelines.TutorialPipeline': 300,
+   #'tutorial.pipelines.TutorialPipeline': 300,
+   'tutorial.mysql_pipeline_two.MysqlPipelineTwo': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -79,7 +90,7 @@ ITEM_PIPELINES = {
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
-#AUTOTHROTTLE_DEBUG = False
+AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings

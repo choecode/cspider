@@ -4,7 +4,7 @@ import re
 
 
 class ListSpider(scrapy.Spider):
-    name = "list"
+    name = "game"
     allowed_domains = ["www.ra3.cn"]
     headers = {
         "host": "www.ra3.cn",
@@ -15,15 +15,8 @@ class ListSpider(scrapy.Spider):
         "Content-Type": " application/x-www-form-urlencoded; charset=UTF-8",
         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0"
     }
-
-    ##
-    #
-    # INSERT INTO wordpress.wp_posts ( post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES ( 1, '2019-09-18 16:06:53', '2019-09-18 08:06:53', '<p>test content</p>', 'test title', '', 'publish', 'open', 'open', '', 'test-title', '', '', '2019-09-18 16:06:53', '2019-09-18 08:06:53', '', 0, '', 0, 'post', '', 0);
-    #
-    #
-    # ##
     start_urls = [
-        "https://www.ra3.cn/activity/woolen/list_1.html",
+        "https://www.ra3.cn/money/game/list_1.html",
     ]
 
     def parse(self, response):
