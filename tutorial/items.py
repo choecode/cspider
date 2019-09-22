@@ -14,3 +14,11 @@ class TutorialItem(scrapy.Item):
     date = scrapy.Field()
     content = scrapy.Field()
     pass
+
+class JiedulItem(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
+    image = scrapy.Field()
+    content = scrapy.Field()
+    time = scrapy.Field()
+    pass

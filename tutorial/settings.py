@@ -10,9 +10,9 @@
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 #mysql
-MYSQL_HOST = '34.92.220.121'
+MYSQL_HOST = '35.220.182.107'
 MYSQL_DBNAME = 'wordpress'
-MYSQL_USER = 'root'
+MYSQL_USER = 'jiedu'
 MYSQL_PASSWORD = '86qweqweqwe'
 
 
@@ -76,7 +76,7 @@ COOKIES_ENABLED = False
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    #'tutorial.pipelines.TutorialPipeline': 300,
-   'tutorial.mysql_pipeline_two.MysqlPipelineTwo': 300,
+   'tutorial.mysql_pipeline_jiedu.MysqlPipelineTwo': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
